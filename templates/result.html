@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Prediction Result - MediCheck{% endblock %}
+
+{% block content %}
+<div class="form-container" style="z-index: 2; position: relative;">
+  <div class="result-container">
+<h2>Possible Diseases</h2>
+<ul style="list-style: none; padding: 0;">
+  {% for disease, prob in predictions %}
+    <li>
+      <span class="disease-name" style="color: #000;">{{ disease }}</span>
+      – <span style="color: #000;">{{ (prob * 100) | round(1) }}%</span>
+    </li>
+  {% endfor %}
+</ul>
+
+
+    <h3 style="color: #4CAF50;">Symptoms You Have Entered:</h3>
+    {% if symptoms %}
+      <div>
+        {% for s in symptoms %}
+          <span class="chip">{{ s }}</span>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>Symptom information not given.</p>
+    {% endif %}
+
+    <br>
+    <a href="{{ url_for('main_routes_bp.home') }}" class="btn-new-prediction">Make A New Prediction</a>
+  </div>
+</div>
+{% endblock %}

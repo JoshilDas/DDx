@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}MediCheck{% endblock %}
+
+{% block content %}
+  <h1 style="z-index: 2; position: relative;">MediCheck</h1>
+
+  <div class="form-container" style="z-index: 2; position: relative;">
+    <form method="POST">
+      {% if error %}
+        <div class="error">{{ error }}</div>
+      {% endif %}
+
+      <label style="color: #000;">Enter a symptom:</label><br><br>
+      <input type="text" id="symptomInput" placeholder="ex: itching, fatigue" autocomplete="off">
+      <div id="suggestions"></div>
+
+      <h4>Selected Symptoms:</h4>
+      <div id="selectedSymptoms"></div>
+      <div id="hiddenInputs"></div>
+
+      <br><br>
+      <button type="submit">Predict</button>
+    </form>
+  </div>
+
+  <!-- Sadece auto_correct.js'i ekliyoruz -->
+  <script src="{{ url_for('static', filename='auto_correct.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}MediCheck{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Vanta.js ve THREE.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js"></script>
+
+  <style>
+    #vanta-bg {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    nav {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      z-index: 3;
+      font-size: 16px;
+    }
+
+    nav a, nav span {
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 16px;
+      margin-left: 10px;
+      text-shadow: 1px 1px 2px #000000;
+    }
+
+    .error {
+      text-align: center;
+      color: #ff7070;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="vanta-bg"></div>
+
+  <nav>
+    {% if session.get("username") %}
+    <span><i class="fas fa-user"></i> {{ session['username'] }}</span>
+      <a href="{{ url_for('main_routes_bp.history') }}">History</a> |
+      <a href="{{ url_for('auth_routes_bp.logout') }}">Exit</a>
+    {% else %}
+      <a href="{{ url_for('auth_routes_bp.login') }}">Login</a>
+    {% endif %}
+
+  </nav>  
+
+  {% block content %}{% endblock %}
+
+  <script>
+    VANTA.WAVES({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      color: 0x26a69a,
+      shininess: 50,
+      waveHeight: 20,
+      waveSpeed: 0.5,
+      zoom: 0.85
+    });
+  </script>
+</body>
+</html>

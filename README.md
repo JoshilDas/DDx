@@ -1,0 +1,3 @@
+MediCheck is a web-based application that predicts possible diseases based on user-inputted symptoms using machine learning. It allows users to enter symptoms through a simple interface, processes and standardizes the input, and returns a ranked list of potential medical conditions with brief descriptions. MediCheck also supports user feedback to help improve future model accuracy. While it offers helpful insights, it does not replace professional medical diagnosis.
+
+Refer to readme_mongodb to get information on the installation of the related database.

@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}Prediction History - MediCheck{% endblock %}
+
+{% block content %}
+  <div id="clear-history-btn">
+    <form method="POST" action="{{ url_for('main_routes_bp.clear_history') }}">
+      <button type="submit" class="btn-clear">
+        <i class="fas fa-broom"></i>
+        Clear History
+      </button>
+    </form>
+  </div>
+
+
+  <div class="form-container" style="z-index: 2; position: relative;">
+    <div class="result-container" style="color: #000; font-size: 16px; text-align: left;">
+      <h2 style="text-align: center;">Previous Predictions</h2>
+
+      {% if predictions %}
+        <div class="prediction-list">
+          {% for item in predictions %}
+            <div class="prediction-card">
+              {# Silme butonu #}
+              <form method="POST"
+                    action="{{ url_for('main_routes_bp.delete_prediction_route') }}"
+                    class="delete-form">
+                <input type="hidden" name="timestamp" value="{{ item.timestamp }}">
+                <button type="submit"
+                        class="btn-delete-icon"
+                        title="Delete">
+                  🗑️
+                </button>
+              </form>
+
+              {# Tahmin başlığı ve checkbox #}
+              <div class="prediction-header">
+                <input type="checkbox"
+                       name="selected[]"
+                       value="{{ item.timestamp }}"
+                       class="select-checkbox">
+                <span class="prediction-icon">🩺</span>
+                <span class="prediction-title">{{ item.prediction }}</span>
+              </div>
+
+              {# Tarih #}
+              <div class="prediction-date">
+                <span class="date-icon">📅</span>
+                <span>{{ item.timestamp }}</span>
+              </div>
+
+              {# Semptomlar #}
+              <div class="prediction-symptoms">
+                <div class="symptoms-title">
+                  <span class="symptoms-icon">🔍</span>
+                  <span>Symptoms:</span>
+                </div>
+                <div class="symptoms-list">
+                  {% for s in item.symptoms %}
+                    <div class="symptom-item">• {{ s }}</div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p style="text-align: center; margin-top: 40px;">
+          You have no predictions to date.
+        </p>
+      {% endif %}
+
+      <div class="action-buttons">
+        <a href="{{ url_for('main_routes_bp.home') }}" class="btn-new-prediction">
+          Make A New Prediction
+        </a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

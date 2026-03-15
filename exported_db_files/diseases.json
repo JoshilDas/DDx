@@ -1,0 +1,41 @@
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3c2"},"disease":"Fungal Infection"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3c3"},"disease":"Allergy"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3c4"},"disease":"GERD"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3c5"},"disease":"Chronic Cholestasis"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3c6"},"disease":"Drug Reaction"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3c7"},"disease":"Peptic Ulcer Disease"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3c8"},"disease":"AIDS"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3c9"},"disease":"Diabetes "}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3ca"},"disease":"Gastroenteritis"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3cb"},"disease":"Bronchial Asthma"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3cc"},"disease":"Hypertension "}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3cd"},"disease":"Migraine"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3ce"},"disease":"Cervical Spondylosis"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3cf"},"disease":"Paralysis (brain hemorrhage)"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3d0"},"disease":"Jaundice"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3d1"},"disease":"Malaria"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3d2"},"disease":"Chickenpox"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3d3"},"disease":"Dengue"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3d4"},"disease":"Typhoid"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3d5"},"disease":"Hepatitis A"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3d6"},"disease":"Hepatitis B"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3d7"},"disease":"Hepatitis C"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3d8"},"disease":"Hepatitis D"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3d9"},"disease":"Hepatitis E"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3da"},"disease":"Alcoholic Hepatitis"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3db"},"disease":"Tuberculosis"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3dc"},"disease":"Common Cold"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3dd"},"disease":"Pneumonia"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3de"},"disease":"Dimorphic Hemmorhoids (piles)"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3df"},"disease":"Heart Attack"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3e0"},"disease":"Varicose Veins"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3e1"},"disease":"Hypothyroidism"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3e2"},"disease":"Hyperthyroidism"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3e3"},"disease":"Hypoglycemia"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3e4"},"disease":"Osteoarthritis"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3e5"},"disease":"Arthritis"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3e6"},"disease":"Vertigo"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3e7"},"disease":"Acne"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3e8"},"disease":"Urinary Tract Infection"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3e9"},"disease":"Psoriasis"}
+{"_id":{"$oid":"6834bffbec4d76f54ca4b3ea"},"disease":"Impetigo"}
