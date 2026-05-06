@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HouseDDx</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="topbar">
+            <div class="brand">
+                <div class="brand-mark">
+                    <i class="fas fa-wave-square"></i>
+                </div>
+                <div>
+                    <h1>HouseDDx</h1>
+                </div>
+            </div>
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <main class="dashboard">
+            <section class="workspace">
+                <div class="workspace-panel intake-panel">
+                    <div class="panel-header">
+                        <p class="eyebrow">Input Console</p>
+                        <h3>Patient Signals</h3>
+                    </div>
+
+                    <form id="symptomForm" class="prediction-form">
+                        <div class="form-section">
+                            <div class="section-heading">
+                                <label for="symptoms" class="section-label">Symptom Matrix</label>
+                                <span>Search and select one or more symptoms</span>
+                            </div>
+                            <div class="symptom-categories">
+                                <button type="button" class="category-btn active" data-category="all">All</button>
+                                <button type="button" class="category-btn" data-category="common">Common</button>
+                                <button type="button" class="category-btn" data-category="pain">Pain</button>
+                                <button type="button" class="category-btn" data-category="respiratory">Respiratory</button>
+                                <button type="button" class="category-btn" data-category="digestive">Digestive</button>
+                            </div>
+                            <select id="symptoms" multiple="multiple">
+                                {% for symptom in symptoms %}
+                                <option value="{{ symptom }}">{{ symptom | replace('_', ' ') | title }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="form-section">
+                            <div class="section-heading">
+                                <label class="section-label">Supplementary Reports</label>
+                                <span>Optional PDF markers for prototype-only ranking refinement</span>
+                            </div>
+
+                            <div class="upload-grid">
+                                <label class="upload-card" for="blood-report">
+                                    <input type="file" id="blood-report" accept="application/pdf">
+                                    <div class="upload-icon"><i class="fas fa-file-medical"></i></div>
+                                    <h4>CBC / Blood Report</h4>
+                                    <p>Optional PDF</p>
+                                    <span class="upload-status">No file selected</span>
+                                </label>
+
+                                <label class="upload-card" for="lft-report">
+                                    <input type="file" id="lft-report" accept="application/pdf">
+                                    <div class="upload-icon"><i class="fas fa-vials"></i></div>
+                                    <h4>LFT Report</h4>
+                                    <p>Optional PDF</p>
+                                    <span class="upload-status">No file selected</span>
+                                </label>
+
+                                <label class="upload-card" for="rft-report">
+                                    <input type="file" id="rft-report" accept="application/pdf">
+                                    <div class="upload-icon"><i class="fas fa-kidneys"></i></div>
+                                    <h4>RFT Report</h4>
+                                    <p>Optional PDF</p>
+                                    <span class="upload-status">No file selected</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="predict-btn">
+                            <span>Run Predictive Scan</span>
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="workspace-panel result-panel">
+                    <div class="panel-header">
+                        <p class="eyebrow">Output Console</p>
+                        <h3>Prediction Intelligence</h3>
+                    </div>
+
+                    <div id="empty-state" class="empty-state">
+                        <div class="empty-visual">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h4>Ready for analysis</h4>
+                        <p>Select symptoms and optionally attach demo PDFs to generate a refined result story.</p>
+                    </div>
+
+                    <div id="results" class="results hidden"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="loading-overlay hidden">
+        <div class="loader-card">
+            <div class="signal-loader">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <p>Calibrating predictive engine...</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
